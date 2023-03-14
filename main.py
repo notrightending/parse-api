@@ -45,10 +45,8 @@ def animate(i):
         for col in range(cols):
             axis[row, col].cla()
             axis[row, col].autoscale(enable=True, axis='both', tight=None)
-    axis[0, 0].set_title('Active velocity')
-    axis[0, 1].set_title('Active phase U')
-    axis[1, 0].set_title('Active phase V')
-    axis[1, 1].set_title('Active out current')
+            axis[row, col].set_title(
+                f"{list(dataJson.keys())[row * cols + col]}")
     axis[0, 0].plot(x_values, y_values, c=colors[0] if actVelocity <
                     20 else colors[1])
     axis[0, 1].plot(x_values, y_values2, c=colors[0] if actPhaseU <
