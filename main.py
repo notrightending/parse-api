@@ -45,18 +45,18 @@ def animate(i):
         for col in range(cols):
             axis[row, col].cla()
             axis[row, col].autoscale(enable=True, axis='both', tight=None)
-    axis[0, 0].set_title('actVelocity')
-    axis[0, 1].set_title('actPhaseU')
-    axis[1, 0].set_title('actPhaseV')
-    axis[1, 1].set_title('actOutCurrent')
+    axis[0, 0].set_title('Active velocity')
+    axis[0, 1].set_title('Active phase U')
+    axis[1, 0].set_title('Active phase V')
+    axis[1, 1].set_title('Active out current')
     axis[0, 0].plot(x_values, y_values, c=colors[0] if actVelocity <
-                    20 else colors[1], label='Active velocity')
+                    20 else colors[1])
     axis[0, 1].plot(x_values, y_values2, c=colors[0] if actPhaseU <
-                    1 else colors[2], label='Active phase U')
+                    1 else colors[2])
     axis[1, 0].plot(x_values, y_values3, c=colors[0] if actPhaseV <
-                    2 else colors[1], label='Active phase V')
+                    2 else colors[1])
     axis[1, 1].plot(x_values, y_values4, c=colors[0] if actOutCurrent <
-                    2 else colors[1], label='Active out current')
+                    2 else colors[1])
 
 
 time_start = time.time()
